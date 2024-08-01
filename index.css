@@ -1,11 +1,116 @@
 body {
-  margin: 0px;
-  padding: 0px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  display: none; /* Hidden by default */
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  z-index: 1000; /* Ensure drawer is on top */
+}
+
+.drawer .close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.drawer .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drawer .links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.drawer .links a:hover {
+  background-color: #555;
+}
+
+.drawer.show {
+  left: 0;
+}
+
+/* Show the hamburger menu and drawer on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
+  }
+  
+  .drawer {
+      display: flex; /* Show the drawer on small screens */
+  }
+}
+
+/* Show regular navigation links on larger screens */
+@media (min-width: 769px) {
+  .drawer {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      padding-top: 0;
+      background-color: transparent;
+      justify-content: flex-end;
+  }
+  
+  .drawer .links {
+      flex-direction: row;
+  }
+  
+  .drawer .links a {
+      padding: 0 1rem;
+  }
+  
+  .drawer .close-btn, .hamburger {
+      display: none; /* Hide close button and hamburger on larger screens */
+  }
+}
+
 
 .section {
   border: rgb(0, 0, 0) 1px solid;
-  background-image: url("data:image/jpeg;base64,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");
+background-image:url("https://static.vecteezy.com/system/resources/thumbnails/009/464/946/small/bright-summer-gradient-background-in-pink-yellow-green-and-blue-good-for-banner-social-media-template-poster-and-flyer-template-free-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -21,7 +126,7 @@ body {
   width: 50%;
 }
 .profile .welcome {
-  color: white;
+  color: rgb(255, 84, 204);
   font-size: 50px;
   font-weight: bold;
 }
@@ -41,20 +146,21 @@ a {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  width: 250px;
+  width: 200px;
+  height: 50px;
   font-size: 1em;
   font-weight: 500;
-  color: rgb(0, 0, 0);
+  color: #000000;
   font-family: inherit;
-  background-color: #ffffff;
+  background-color:#ffcc00;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  background-color: #646cff;
+  background-color: #000dff;
   color: #ffffff;
   border: 1px solid;
   border-color: #646cff;
@@ -68,16 +174,20 @@ button:focus-visible {
   height: 500px;
   width: 40%;
   margin-left: 20px;
+  margin-bottom:20px;
 }
 .prf img {
-  border-radius: 5%;
+  border-radius: 50%;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  background: inherit;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+ 
 }
 
 .icon {
-  color: white;
+  color: #ffcc00;
 }
 
 .icon i {
@@ -100,6 +210,7 @@ h2 {
   color: rgb(33, 27, 39);
 }
 
+
 .links {
   display: flex;
   justify-content: end;
@@ -109,7 +220,7 @@ h2 {
   margin-top: 15px;
   margin-right: 50px;
 
-  color: white;
+  color: #ffffff;
   font-size: 18px;
   text-decoration-style: wavy;
 }
@@ -117,7 +228,7 @@ h2 {
 a:hover {
   font-size: 20px;
   font-weight: bold;
-  color: blue;
+  color: rgb(0, 0, 255);
   cursor: pointer;
   text-decoration: underline;
   text-decoration-style: double;
@@ -154,7 +265,11 @@ a:hover {
   height: 400px;
   width: 40%;
 }
-
+.abt h3{
+  font-family: 'Georgia', serif;
+    font-size: 25px;
+    color: #00ff44;
+}
 .abtImage img {
   border-radius: 38%;
   height: 100%;
@@ -179,20 +294,11 @@ a:hover {
 
 .skills-container {
   display: flex;
-
+overflow:hidden;
   justify-content: space-between;
 }
 
-.skills-card {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  margin: 1rem;
-  padding: 1rem;
-  width: calc(33% - 2rem);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border: #a3a3a3 1px solid;
-}
+
 
 .skills-card h3 {
   margin-bottom: 1rem;
@@ -207,6 +313,24 @@ a:hover {
 
 .skills-card li {
   margin-bottom: 0.5rem;
+}
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.skills-card {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: #a3a3a3 1px solid;
 }
 
 .skills-card:hover {
@@ -419,14 +543,18 @@ input {
   z-index: 1000;
 }
 
+#chat-button-container i{
+  color: #000000;
+}
+
 #chat-button {
-  background-color: #007bff;
+  background-color: #ffcc00;
   display: flex;
   justify-content: space-around;
   height: 50px;
   width: 180px;
   align-items: center;
-  color: #fff;
+  color: #000000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -434,8 +562,11 @@ input {
 }
 
 #chat-button:hover {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+  border-color: #646cff;
 }
+
 
 #chat-window {
   position: fixed;
@@ -538,7 +669,7 @@ input {
     border-radius: 50%;
     background-image: url('https://img.freepik.com/premium-vector/girl-coding-with-laptop-illustration_418302-2384.jpg');
     background-size: cover;
-    transition: transform 0.3s ease; /* Adjust the duration and easing function as needed */
+    transition: transform 0.3s ease; 
   }
 
 @media only screen and (max-width: 768px) {
@@ -572,7 +703,7 @@ input {
         object-fit: cover;
       }
       .profile .welcome {
-        color: white;
+        
         font-size: 30px;
         font-weight: bold;
       }
@@ -592,9 +723,9 @@ input {
         width: 120px;
         font-size: 12px;
         display: flex;
-        background-color: #646cff;
+       
         color: whitesmoke;
-        justify-content: center;
+       align-items: center;
       }
       .profile button:hover{
         background-color: white;
@@ -612,38 +743,55 @@ input {
         font-size: 12px;
       }
       
-      .display-small {
+     
+    
+    .display-small {
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
-      }
+    }
     
-      .screen-content {
+    .screen-content {
         display: flex;
         width: 300px;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
-      }
+    }
     
-      .toggle-icon {
-        background-color:#646cff; 
+    .toggle-icon {
+        background-color: #646cff;
         display: block;
         cursor: pointer;
-      }
+        padding: 5px;
+        border-radius: 5px;
+    }
     
-      .content {
+    .toggle-icon:hover {
+        background-color: #535bcc;
+    }
+    
+    .content {
         display: none;
-      }
+        margin-top: 10px;
+        font-size: 16px; /* Adjust font size */
+        line-height: 1.5; /* Adjust line height for better readability */
+    }
     
-      .content.expanded {
+    .content.expanded {
         display: block;
         width: 100%;
-      }
-.abtImage{
-    display: none;
-}
- 
+    }
+    
+    .abtImage {
+        display: none;
+    }
+    
+    h3 {
+        margin: 0; /* Ensure the heading has no margin */
+        font-size: 18px; /* Adjust heading font size */
+    }
+    
     .skills-container,
     .project-cards {
       flex-wrap: wrap;
@@ -690,7 +838,11 @@ input {
       
   }
   
-  /* Additional Media Queries for Even Smaller Devices if Needed */
+ 
   @media only screen and (max-width: 480px) {
-    /* Additional adjustments for even smaller devices */
+    
   }
+
+
+  
+

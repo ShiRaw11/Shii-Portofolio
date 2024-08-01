@@ -1,0 +1,91 @@
+[
+    {
+        "title": "React notes",
+        "content": [
+            {
+                "heading": "Introduction to React",
+                "body": "React is a JavaScript library for building user interfaces, maintained by Facebook. It allows the creation of dynamic web applications that update efficiently with data changes."
+            },
+            {
+                "heading": "Components",
+                "body": "Components are the building blocks of React applications. They can be functional or class-based. Functional components are JavaScript functions returning JSX. Class-based components are ES6 classes extending React.Component with a render method."
+            },
+            {
+                "heading": "JSX (JavaScript XML)",
+                "body": "JSX is a syntax extension for JavaScript, used to describe UI."
+            },
+            {
+                "heading": "Props",
+                "body": "Props are read-only attributes for passing data between components."
+            },
+            {
+                "heading": "State",
+                "body": "State is a built-in object for storing property values belonging to a component. When the state changes, the component re-renders."
+            },
+            {
+                "heading": "Lifecycle Methods",
+                "body": "Lifecycle methods run code at specific times in the component's lifecycle: Mounting (componentDidMount), Updating (componentDidUpdate), and Unmounting (componentWillUnmount)."
+            },
+            {
+                "heading": "Hooks",
+                "body": "Hooks are functions for using state and other React features in functional components: useState (adds state to functional components) and useEffect (performs side effects in functional components)."
+            }
+        ],
+        "date": "2023-01-01"
+    },
+    {
+        "title": "Introduction to React: Frequently Asked Questions",
+        "content": [
+            {
+                "heading": "What is React?",
+                "body": "React is an open-source JavaScript library maintained by Facebook for building user interfaces, particularly for single-page applications where a dynamic and interactive user experience is crucial. React enables developers to create reusable UI components and manage the state of those components efficiently. It is known for its component-based architecture, which simplifies the development and maintenance of complex UIs."
+            },
+            {
+                "heading": "What is JSX?",
+                "body": "JSX, which stands for JavaScript XML, is a syntax extension for JavaScript that allows you to write HTML-like code directly within your JavaScript files. JSX makes it easier to create React elements and components by allowing you to mix HTML with JavaScript. This syntax is transformed into plain JavaScript by tools such as Babel, which React uses to render UI components."
+            },
+            {
+                "heading": "What are Components in React?",
+                "body": "Components are the fundamental building blocks of a React application. They are JavaScript functions or classes that return React elements, which describe what should be rendered on the screen. Components can be classified as functional or class-based: Functional Components are simpler and typically used for presenting UI, while Class-Based Components offer additional features like lifecycle methods and are used for more complex scenarios."
+            },
+            {
+                "heading": "What is State in React?",
+                "body": "State is a built-in object in React components that holds data that can change over time. It is used to manage the dynamic aspects of a component. When the state changes, React re-renders the component to reflect the updated data. State is fundamental for handling user interactions and asynchronous data in React applications."
+            }
+        ],
+        "date": "2024-08-01"
+    },
+    {
+        "title": "Example of React Projects ",
+        "content": [
+            {
+                "heading": "1. Todo List Application",
+                "body": "A Todo List application is a great beginner project that helps you practice state management and CRUD operations. Users can add, delete, and mark tasks as complete. Implement features like filtering tasks and persisting data with local storage to enhance the project."
+            },
+            {
+                "heading": "2. Weather Dashboard",
+                "body": "Build a Weather Dashboard to fetch and display weather information from an API. This project will help you work with asynchronous data fetching, state management, and displaying dynamic content. Incorporate features like search functionality and weather forecasts for different locations."
+            },
+            {
+                "heading": "3. Recipe Finder",
+                "body": "Create a Recipe Finder application where users can search for recipes based on ingredients or cuisine. Use a recipe API to fetch data and display it in a user-friendly way. This project involves handling user input, managing application state, and displaying lists of data."
+            },
+            {
+                "heading": "4. Movie Search App",
+                "body": "Develop a Movie Search App that allows users to search for movies and view detailed information about them. Integrate with a movie database API to retrieve movie data and display it. Add features like pagination and sorting to improve the user experience."
+            },
+            {
+                "heading": "5. E-commerce Store",
+                "body": "Build a basic E-commerce Store where users can browse products, add items to a shopping cart, and proceed to checkout. This project will involve complex state management, handling user interactions, and implementing routing for different views like product details and cart."
+            },
+            {
+                "heading": "6. Chat Application",
+                "body": "Create a real-time Chat Application where users can send and receive messages. This project will help you understand WebSockets or other real-time communication technologies, user authentication, and managing user sessions."
+            }
+        ],
+        "date": "2024-08-01"
+    }
+
+]
+
+

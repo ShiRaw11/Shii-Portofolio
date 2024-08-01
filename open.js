@@ -1,9 +1,14 @@
-document.querySelectorAll('.toggle-icon').forEach(function(icon) {
-    icon.addEventListener('click', function() {
-      var content = this.parentElement.nextElementSibling;
-      content.classList.toggle('expanded');
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleIcons = document.querySelectorAll('.toggle-icon');
+
+  toggleIcons.forEach(icon => {
+      icon.addEventListener('click', () => {
+          const content = icon.parentElement.nextElementSibling;
+          content.classList.toggle('expanded');
+      });
   });
+});
+
  
   
   document.addEventListener('mousemove', (event) => {

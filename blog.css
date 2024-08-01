@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#filter-button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#filter-button:hover {
+    background-color: #e6b800;
+}
+
+#blog {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#post-container {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+#filter-container {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #00ff44;
+    display: flex;
+    justify-content: center;
+}
+
+.post-content {
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+}
+
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-item:hover {
+    background-color: #444;
+}
+
+.filter-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+
+.filter-date {
+    font-family: 'Courier New', Courier, monospace;
+    color: #999;
+}
+
+#navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
