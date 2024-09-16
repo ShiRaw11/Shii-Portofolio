@@ -85,9 +85,14 @@ nav {
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
-  display: none; 
+  display: none;
 }
-
+.hamburger::before {
+  content: '☰'; 
+  font-size: 2rem;
+  color: #fff; 
+  margin: 10px;
+}
 .drawer {
   position: fixed;
   top: 0;
@@ -100,7 +105,7 @@ nav {
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .drawer .close-btn {
@@ -135,42 +140,46 @@ nav {
   left: 0;
 }
 
-/* Show the hamburger menu and drawer on small screens */
 @media (max-width: 768px) {
   .hamburger {
-      display: block;
+    display: block;
   }
   
   .drawer {
-      display: flex; 
+    display: flex;
   }
 }
-
 
 @media (min-width: 769px) {
   .drawer {
-      display: flex;
-      position: relative;
-      left: 0;
-      width: auto;
-      height: auto;
-      flex-direction: row;
-      padding-top: 0;
-      background-color: transparent;
-      justify-content: flex-end;
+    display: flex;
+    position: relative;
+    left: 0;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    padding-top: 0;
+    background-color: transparent;
+    justify-content: flex-end;
   }
   
   .drawer .links {
-      flex-direction: row;
+    flex-direction: row;
   }
   
   .drawer .links a {
-      padding: 0 1rem;
+    padding: 0 1rem;
   }
   
   .drawer .close-btn, .hamburger {
-      display: none; }
+    display: none;
+  }
 }
+
+.text-content {
+  margin-right: 60px;
+}
+
 
 
 .section {
@@ -203,7 +212,10 @@ a {
   color: white;
   font-size: 20px;
 }
-
+.profile a{
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .profile img {
   height: 100%;
   width: 100%;
@@ -801,9 +813,10 @@ input {
         object-fit: cover;
       }
       .profile button{
-        width: 120px;
+        width: 150px;
         font-size: 12px;
         display: flex;
+        justify-content: center;
        
         color: whitesmoke;
        align-items: center;
@@ -855,9 +868,8 @@ input {
     .content {
         display: none;
         margin-top: 10px;
-        font-size: 16px; /* Adjust font size */
-        line-height: 1.5; /* Adjust line height for better readability */
-    }
+        font-size: 16px;
+        line-height: 1.5;}
     
     .content.expanded {
         display: block;
@@ -869,8 +881,8 @@ input {
     }
     
     h3 {
-        margin: 0; /* Ensure the heading has no margin */
-        font-size: 18px; /* Adjust heading font size */
+        margin: 0; 
+        font-size: 18px; 
     }
     
     .skills-container,
